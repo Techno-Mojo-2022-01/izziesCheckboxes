@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Izzie's Checkboxes</title>
+</head>
+
+<body>
+	<p>Select your favorite snackie:</p>
+	<label for="fruit1"> 
+		<input type="checkbox" name="fruit" value="banana" id="c1">Banana</label>
+	<label for="fruit2">
+		<input type="checkbox" name="fruit" value="orange" id="c2"> Orange</label>
+	<label for="fruit3">
+		<input type="checkbox" name="fruit" value="grape" id="c3">Grapes</label>
+	<p>
+		<button id="btn">Get Selected Snackie</button>
+	</p>
+
+	<script>
+		const btn = document.querySelector('#btn')
+		btn.addEventListener('click', (event) => {
+			let checkboxes = document.querySelectorAll('input[name="fruit"]:checked');
+			let values = []
+			checkboxes.forEach((checkbox) => {
+				values.push(checkbox.value)
+			})
+			alert(values)
+		})   
+	</script>
+
+</body>
+
+</html>
